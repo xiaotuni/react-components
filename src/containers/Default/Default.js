@@ -62,6 +62,22 @@ export default class Default extends Component {
       Utility.$alert('你点击的是取消', '标题信息');
     });
   }
+  __OnActionSheet() {
+    Utility.$actionSheet('这是内容啦', '这是标题啦');
+  }
+
+  __OnActionSheetBtns() {
+    const __CallBack = (args) => {
+      console.log(args);
+      Utility.$actionSheetHide();
+    };
+    Utility.$actionSheet(null, null, null, null, [
+      { Title: '标题1', funName: __CallBack.bind(this) },
+      { Title: '标题2', funName: __CallBack.bind(this) },
+      { IsSplitLine: true },
+      { Title: '标题3', funName: __CallBack.bind(this) },
+    ]);
+  }
 
   render() {
     const styles = require('./scss/Default.scss');
@@ -76,6 +92,8 @@ export default class Default extends Component {
           <div className={styles.demoItem}>
             <div className={styles.item} onClick={this.__OnLoading.bind(this)}>{times > 0 ? 'Loading(' + times + ')' : 'Loading'}</div>
             <div className={styles.item} onClick={this.__OnAlert.bind(this)}>Alert Message</div>
+            <div className={styles.item} onClick={this.__OnActionSheet.bind(this)}>Action Sheet</div>
+            <div className={styles.item} onClick={this.__OnActionSheetBtns.bind(this)}>Action Sheet Buttons</div>
             <div className={styles.item} onClick={this.__OnConfirm.bind(this)}>Confirm</div>
             <div>
 
