@@ -1,0 +1,32 @@
+.iconCss {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  padding: 5px;
+  height: 100%;
+
+  &.hidePadding {
+    padding: 0;
+  }
+
+  div {
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: contain; 
+    }
+    width: 20px;
+    height: 20px;
+  }
+
+  &.iconDefault {
+    div {
+      width: 30px;
+      height: 30px;
+      border-radius: 20px;
+      background-size: cover;
+    }
+  }
+
+
+}

@@ -1,0 +1,34 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "source": {
+        "include": ["src"],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+      "transform-decorators-legacy",
+      "node_modules/jsdoc-babel"
+    ],
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true
+    },
+    "opts": {
+        "encoding": "utf8",
+        "private": true,
+        "recurse": true
+    },
+    "babel": {
+      "presets": ["es2015", "react", "stage-2"],
+      "plugins": [
+        "transform-runtime",
+        "add-module-exports",
+        "transform-decorators-legacy",
+        "transform-react-display-name"
+      ]
+
+    }
+}

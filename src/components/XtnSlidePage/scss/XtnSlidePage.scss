@@ -1,0 +1,154 @@
+.slidePageCss {
+  width: 100%;
+  position: relative;
+
+  .imageInfo {
+    overflow: hidden;
+    z-index: 1;
+
+    .imageItems {
+      display: flex;
+      width: 100vw;
+
+      .item {
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        .imgInfo {
+          width: 100%;
+        }
+
+        &.other {
+          width: 100%;
+        }
+
+        &.none {
+          display: none;
+        }
+
+        &.item0 {
+          // transform: translate3d(-100%,0,0);
+          // transition: all .2s ease-in;
+        }
+
+        &.items_0 {
+          // transform: translate3d(0,0,0);
+          // transition: all .2s ease-in;
+        }
+      }
+
+      .item_P {
+        // @extend .item;
+        // transform: translate3d(-100%,0,0);
+
+        // &.item0_p {
+        //   transform: translate3d(0,0,0);
+        //   transition: all .2s ease-in;
+        // }
+      }
+    }
+
+  }
+
+  .dotInfo {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    width: 100vw;
+    margin-top: -20px;
+    z-index: 2;
+    position: absolute;
+
+    .dotItem {
+      display: flex;
+
+      .dot {
+        margin: 2px;
+
+        div {
+          border-radius: 10px;
+          height: 10px;
+          width: 10px;
+          background: #E4E4E4;
+        }
+
+        &.select {
+          div {
+            // background: rgba(109, 103, 99, 0.48);
+            background: #12A2D7;
+          }
+        }
+      }
+
+      .line {
+
+        margin: 2px;
+
+        > div {
+          height: 5px;
+          width: 10px;
+          background: #E4E4E4;
+        }
+
+        &.select {
+          div {
+            background: #12A2D7;
+          }
+        }
+      }
+    }
+  }
+
+  .numberInfo {
+    width: 100vw;
+    text-align: center;
+    font-size: 2rem;
+    bottom: 5vh;
+    position: fixed;
+    color: #f0f0f0;
+    left: 0;
+  }
+
+  .buttonGroup {
+    display: none;
+    padding: 10px;
+
+    div {
+      flex: 1;
+      padding: 5px;
+      font-size: 2px;
+      background: #dcdcdc;
+      text-align: center;
+      margin: 0 10px;
+      color: #222;
+      border-radius: 5px;
+    }
+  }
+
+  .children {
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+    .child {
+      display: flex;
+
+      .item {
+        // padding: 5px;
+        transition: all .2s ease-in;
+      }
+
+      & > div:nth-child(odd) {
+        background: blue;
+        color: #fff;
+      }
+
+      & > div:nth-child(even) {
+        background: #999;
+        color: #fff;
+      }
+    }
+  }
+}

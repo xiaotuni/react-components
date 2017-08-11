@@ -1,0 +1,74 @@
+/*body {
+  background: #fff;
+}*/
+
+.myHref {
+
+  // width: 100%;
+  // padding: 20px 5px;
+  // text-align: center;
+  // overflow: hidden;
+  //div {
+  //  background: #FFFAE3;
+  //  padding: 5px;
+  //  margin: 5px 0px;
+  //  border-radius: 5px;
+  //}
+  /*padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;*/
+  overflow: hidden;
+  display: float;
+
+  .item {
+    padding: 5px;
+    margin-top: 2px;
+    float: left;
+    width: 33.33%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    div {
+      background: #FFFAE3;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  }
+
+  .select {
+    div {
+      background: #969696;
+      color: #fff;
+    }
+  }
+
+  .iconInfo {
+
+    margin-bottom: 5px;
+
+    .iconDemo {
+      textarea {
+        width: 100%;
+        line-height: 1.8;
+        padding: 5px;
+      }
+    }
+
+    .iconItem {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .item1 {
+        padding: 2px;
+
+        .title {
+          text-align: center;
+        }
+      }
+
+    }
+  }
+}

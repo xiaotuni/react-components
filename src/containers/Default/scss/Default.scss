@@ -1,0 +1,38 @@
+@import "../../../Common/Common";
+
+.defaultCss {
+  @extend .gMain;
+  font-size: 14px;
+
+  .components {
+    padding: 10pt;
+
+    .title {
+      text-align: center;
+      font-size: 18pt;
+    }
+
+    .demoItem {
+      font-size: 14pt;
+      margin-top: 10pt;
+
+      .item {
+        margin-top: 10pt;
+        border: 1px solid #eee;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+
+        &:active {
+          background: #cfcfcf;
+        }
+
+        &:hover {
+          background: blue;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}

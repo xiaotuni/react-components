@@ -1,0 +1,214 @@
+@import "../../../Common/Common";
+
+.navBarCss {
+  width: 100%;
+  height: 40px; // 暂定高度
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f5f5f5;
+  z-index: 800;
+
+  .imgCenter {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .subContent {
+    display: flex;
+    width: 100%;
+
+    .left {
+      padding: 5px;
+      display: -webkit-box;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      min-width: 40px;
+
+      .defaultIcon {
+        @extend .gWebkitBoxCenter;
+        width: 100%;
+        height: 100%;
+
+        div {
+          @include g-Image-Center-Url($url: '../img/icon-back@3x.png');
+          width: 15px;
+          height: 15px;
+          opacity: 1;
+        }
+
+        .undisplay {
+          opacity: 0;
+        }
+      }
+
+      .nbButton {
+        @extend .gWebkitBoxCenter;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 100%;
+        padding: 5px;
+        font-size: 14px;
+      }
+
+      .nbIcon {
+        @extend .gWebkitBoxCenter;
+
+        div {
+          @extend .gImageCenter;
+          width: 15px;
+          height: 15px;
+        }
+      }
+
+      .nbMenuInfo1 {
+        @extend .gWebkitBoxCenter;
+
+        div {
+          @include g-Image-Center-Url($url: '../img/icon-more@3x.png');
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .nbIconList {
+        right: 0;
+        display: flex;
+        position: absolute;
+
+        .nbItem {
+          margin-right: 15px;
+          @extend .nbIcon;
+        }
+      }
+    }
+
+    .center {
+      font-size: 18px; 
+      color: #222;
+      flex: 1;
+      justify-content: center;
+      display: flex;
+
+      .title {
+        display: -webkit-box;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        height: 100%;
+        text-align: center;
+        line-height: 40px;
+      }
+
+      .other {
+        flex: 1;
+      }
+    }
+
+    .right {
+      display: -webkit-box;
+      -webkit-box-align: center;
+      -webkit-box-pack: center;
+      min-width: 40px;
+      padding: 5px 0;
+
+      .defaultIcon {
+        @extend .gWebkitBoxCenter;
+
+        div {
+          @include g-Image-Center-Url($url: '../img/icon-more@3x.png');
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .nbButton {
+        @extend .gWebkitBoxCenter;
+        overflow: hidden;
+        white-space: nowrap;
+        height: 100%;
+        padding: 5px;
+        font-size: 14px;
+      }
+
+      .nbIcon {
+        @extend .gWebkitBoxCenter;
+
+        div {
+          @extend .gImageCenter;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .nbMenuInfo1 {
+        @extend .gWebkitBoxCenter;
+
+        div {
+          @include g-Image-Center-Url($url: '../img/icon-more@3x.png');
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .nbIconList {
+        right: 0;
+        display: flex;
+        position: absolute;
+
+        .nbItem {
+          margin-right: 15px;
+          @extend .nbIcon;
+        }
+      }
+    }
+  }
+
+  .nbMenuInfo {
+    //display: flex;
+    //flex-direction: row-reverse;
+    /*position: absolute;
+    right: 0px;*/
+    display: none;
+    position: fixed;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+
+    .nbContent {
+      position: absolute;
+      right: 0;
+
+      .nbMenuItem {
+        padding: 5px 10px 5px 5px;
+        background: #fff;
+
+        .nbItem {
+          padding: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    &.showMenu {
+      display: block;
+    }
+  }
+
+  .isWeiXin1 {
+    display: none;
+  }
+
+  .noResources {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+}
+
+.isWeiXin {
+  height: 0;
+  width: 0;
+}

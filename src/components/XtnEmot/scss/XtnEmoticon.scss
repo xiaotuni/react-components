@@ -1,0 +1,380 @@
+.emoticonCss {
+  position: relative;
+  height: 30vh;
+  border: 1px solid #f5f5f5;
+  justify-content: center;
+  overflow: auto;
+
+  .groups {
+    display: flex;
+    flex-wrap: wrap;
+
+    .emot {
+      height: 12.2vw;
+      width: 12.2vw;
+      padding: 5px;
+
+      &:hover {
+        padding: 4px;
+        border: 1px solid #d1e5f1;
+        border-radius: 50%;
+        box-shadow: 1px 2px #d1e5f1;
+      }
+
+      > div {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+      }
+
+    }
+  }
+
+  &.emotClear {
+    border: none;
+    height: inherit;
+  }
+
+  .emotSingle {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+  }
+
+  .emot_default {
+    background-image: url('../img/smiley_0.png');
+  }
+
+  .emot_0 {
+    background-image: url('../img/smiley_0.png');
+  }
+
+  .emot_1 {
+    background-image: url('../img/smiley_1.png');
+  }
+
+  .emot_2 {
+    background-image: url('../img/smiley_2.png');
+  }
+
+  .emot_3 {
+    background-image: url('../img/smiley_3.png');
+  }
+
+  .emot_4 {
+    background-image: url('../img/smiley_4.png');
+  }
+
+  .emot_5 {
+    background-image: url('../img/smiley_5.png');
+  }
+
+  .emot_6 {
+    background-image: url('../img/smiley_6.png');
+  }
+
+  .emot_7 {
+    background-image: url('../img/smiley_7.png');
+  }
+
+  .emot_8 {
+    background-image: url('../img/smiley_8.png');
+  }
+
+  .emot_9 {
+    background-image: url('../img/smiley_9.png');
+  }
+
+  .emot_10 {
+    background-image: url('../img/smiley_10.png');
+  }
+
+  .emot_11 {
+    background-image: url('../img/smiley_11.png');
+  }
+
+  .emot_12 {
+    background-image: url('../img/smiley_12.png');
+  }
+
+  .emot_13 {
+    background-image: url('../img/smiley_13.png');
+  }
+
+  .emot_14 {
+    background-image: url('../img/smiley_14.png');
+  }
+
+  .emot_15 {
+    background-image: url('../img/smiley_15.png');
+  }
+
+  .emot_16 {
+    background-image: url('../img/smiley_16.png');
+  }
+
+  .emot_17 {
+    background-image: url('../img/smiley_17.png');
+  }
+
+  .emot_18 {
+    background-image: url('../img/smiley_18.png');
+  }
+
+  .emot_19 {
+    background-image: url('../img/smiley_19.png');
+  }
+
+  .emot_20 {
+    background-image: url('../img/smiley_20.png');
+  }
+
+  .emot_21 {
+    background-image: url('../img/smiley_21.png');
+  }
+
+  .emot_22 {
+    background-image: url('../img/smiley_22.png');
+  }
+
+  .emot_23 {
+    background-image: url('../img/smiley_23.png');
+  }
+
+  .emot_24 {
+    background-image: url('../img/smiley_24.png');
+  }
+
+  .emot_25 {
+    background-image: url('../img/smiley_25.png');
+  }
+
+  .emot_26 {
+    background-image: url('../img/smiley_26.png');
+  }
+
+  .emot_27 {
+    background-image: url('../img/smiley_27.png');
+  }
+
+  .emot_28 {
+    background-image: url('../img/smiley_28.png');
+  }
+
+  .emot_29 {
+    background-image: url('../img/smiley_29.png');
+  }
+
+  .emot_30 {
+    background-image: url('../img/smiley_30.png');
+  }
+
+  .emot_31 {
+    background-image: url('../img/smiley_31.png');
+  }
+
+  .emot_32 {
+    background-image: url('../img/smiley_32.png');
+  }
+
+  .emot_33 {
+    background-image: url('../img/smiley_33.png');
+  }
+
+  .emot_34 {
+    background-image: url('../img/smiley_34.png');
+  }
+
+  .emot_35 {
+    background-image: url('../img/smiley_35.png');
+  }
+
+  .emot_36 {
+    background-image: url('../img/smiley_36.png');
+  }
+
+  .emot_37 {
+    background-image: url('../img/smiley_37.png');
+  }
+
+  .emot_38 {
+    background-image: url('../img/smiley_38.png');
+  }
+
+  .emot_39 {
+    background-image: url('../img/smiley_39.png');
+  }
+
+  .emot_40 {
+    background-image: url('../img/smiley_40.png');
+  }
+
+  .emot_41 {
+    background-image: url('../img/smiley_41.png');
+  }
+
+  .emot_42 {
+    background-image: url('../img/smiley_42.png');
+  }
+
+  .emot_43 {
+    background-image: url('../img/smiley_43.png');
+  }
+
+  .emot_44 {
+    background-image: url('../img/smiley_44.png');
+  }
+
+  .emot_45 {
+    background-image: url('../img/smiley_45.png');
+  }
+
+  .emot_46 {
+    background-image: url('../img/smiley_46.png');
+  }
+
+  .emot_47 {
+    background-image: url('../img/smiley_47.png');
+  }
+
+  .emot_48 {
+    background-image: url('../img/smiley_48.png');
+  }
+
+  .emot_49 {
+    background-image: url('../img/smiley_49.png');
+  }
+
+  .emot_50 {
+    background-image: url('../img/smiley_50.png');
+  }
+
+  .emot_51 {
+    background-image: url('../img/smiley_51.png');
+  }
+
+  .emot_52 {
+    background-image: url('../img/smiley_52.png');
+  }
+
+  .emot_53 {
+    background-image: url('../img/smiley_53.png');
+  }
+
+  .emot_54 {
+    background-image: url('../img/smiley_54.png');
+  }
+
+  .emot_55 {
+    background-image: url('../img/smiley_55.png');
+  }
+
+  .emot_56 {
+    background-image: url('../img/smiley_56.png');
+  }
+
+  .emot_57 {
+    background-image: url('../img/smiley_57.png');
+  }
+
+  .emot_58 {
+    background-image: url('../img/smiley_58.png');
+  }
+
+  .emot_59 {
+    background-image: url('../img/smiley_59.png');
+  }
+
+  .emot_60 {
+    background-image: url('../img/smiley_60.png');
+  }
+
+  .emot_61 {
+    background-image: url('../img/smiley_61.png');
+  }
+
+  .emot_62 {
+    background-image: url('../img/smiley_62.png');
+  }
+
+  .emot_63 {
+    background-image: url('../img/smiley_63.png');
+  }
+
+  .emot_64 {
+    background-image: url('../img/smiley_64.png');
+  }
+
+  .emot_65 {
+    background-image: url('../img/smiley_65.png');
+  }
+
+  .emot_66 {
+    background-image: url('../img/smiley_66.png');
+  }
+
+  .emot_67 {
+    background-image: url('../img/smiley_67.png');
+  }
+
+  .emot_68 {
+    background-image: url('../img/smiley_68.png');
+  }
+
+  .emot_69 {
+    background-image: url('../img/smiley_69.png');
+  }
+
+  .emot_70 {
+    background-image: url('../img/smiley_70.png');
+  }
+
+  .emot_71 {
+    background-image: url('../img/smiley_71.png');
+  }
+
+  .emot_72 {
+    background-image: url('../img/smiley_72.png');
+  }
+
+  .emot_73 {
+    background-image: url('../img/smiley_73.png');
+  }
+
+  .emot_74 {
+    background-image: url('../img/smiley_74.png');
+  }
+
+  .emot_75 {
+    background-image: url('../img/smiley_75.png');
+  }
+
+  .emot_76 {
+    background-image: url('../img/smiley_76.png');
+  }
+
+  .emot_77 {
+    background-image: url('../img/smiley_77.png');
+  }
+
+  .emot_78 {
+    background-image: url('../img/smiley_78.png');
+  }
+
+  .emot_79 {
+    background-image: url('../img/smiley_79.png');
+  }
+
+  .emot_80 {
+    background-image: url('../img/smiley_80.png');
+  }
+
+  .emot_81 {
+    background-image: url('../img/smiley_81.png');
+  }
+}

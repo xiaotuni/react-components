@@ -1,0 +1,263 @@
+@import "../../../Common/Common";
+$defalut-bg: #fff;
+$default-theme: #4eccc4;
+$default-color: #fff;
+
+:root {
+  //--default-bg: #f7f7f7;
+  --default-bg: #fff;
+  --default-color: color(var(--default-bg) contrast(50%));
+  --default-disabled-color: color(var(--default-color) blend(var(--default-bg) 70%));
+  --default-theme: #4eccc4;
+}
+
+.datepickerModal {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  touch-action: none; // 禁止底层滑动。
+}
+
+.datepicker {
+  position: relative;
+  left: 0;
+  //bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 360px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: arial, verdana, sans-serif;
+  box-sizing: content-box;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  border-radius: 5px;
+
+  .datepickerHeader {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: aliceblue;
+    margin-top: 0;
+    min-height: 2em;
+    font-size: 1.3em;
+    color: #222;
+    border: 1px solid #ced7f7;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+
+    div {
+      flex: 1;
+      padding: 5px;
+    }
+
+    .dateInfo1 {
+      text-align: right;
+      padding-right: 15px;
+    }
+
+    .dateTimeInfo {
+      flex: 2;
+      line-height: 35px;
+      font-size: 1.5rem;
+    }
+
+    .select {
+      color: #299CEE;
+    }
+  }
+
+  .datepickerNavbar {
+    padding: 5px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: aliceblue;
+    display: flex;
+    border: 1px solid #ced7f7;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-weight: 600;
+
+    div {
+      flex: 1;
+      text-align: center;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .complate {
+      margin: 5px;
+      padding: 3px 5px;
+      //background: red;
+      color: #299CEE;
+    }
+
+    .cancel {
+      margin: 5px;
+      padding: 3px 5px;
+      //background: #969696;
+      color: #299CEE;
+    }
+  }
+
+  .datepickerContent {
+    display: flex;
+    padding: .5em .25em;
+  }
+
+  .timeContent {
+    /*padding: 40px;
+    position: relative;
+    width: 100%;*/
+
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+
+    .timeContentCenter {
+      /*padding-top: 33%;*/
+      font-size: 2rem;
+
+      .item {
+        padding: 15px 5px 5px;
+        position: relative;
+        display: -webkit-box;
+        display: flex;
+
+        .title {
+          flex: 1;
+          line-height: 2.4;
+          text-align: right;
+        }
+
+        .value {
+          flex: 1;
+
+          input {
+            height: 100%;
+            width: 100%;
+            padding: 5px 10px 5px 2px;
+            border: 1px solid #dcdcdc;
+            border-radius: 2px;
+            text-align: center;
+          }
+        }
+
+        .arrow {
+          flex: 1;
+          padding-left: 2px;
+
+          .comArrow {
+            border-left: 1.5rem solid transparent;
+            border-right: 1.5rem solid transparent;
+            width: 2rem;
+          }
+
+          .up {
+            div {
+              @extend .comArrow;
+              border-bottom: 2rem solid #d2bcbc;
+              margin-top: -2px;
+
+              &:hover {
+                border-bottom: 2rem solid blue;
+              }
+            }
+          }
+
+          .down {
+            div {
+              @extend .comArrow;
+              border-top: 2rem solid #d2bcbc;
+              margin-top: 1px;
+
+              &:hover {
+                border-top: 2rem solid blue;
+              }
+            }
+
+          }
+
+        }
+      }
+    }
+  }
+
+  .datepickerCol1 {
+    flex: 1;
+    margin: 0 .25em;
+  }
+
+  .datepickerViewPort {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  }
+
+  .datepickerWheel {
+    position: absolute;
+    height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    //width: 100%;
+    width: 33.333%; // 中间对齐了。
+    margin-left: -0.5rem;
+  }
+
+  .datepickerScroll {
+    list-style-type: none;
+
+    & > li {
+      height: 40px;
+      line-height: 40px;
+      font-size: 1.375em;
+      cursor: pointer;
+    }
+  }
+
+  /* default */
+  &.default {
+    background-color: $defalut-bg;
+
+    .datepickerWheel {
+      border-top: 1px solid $default-theme;
+      border-bottom: 1px solid $default-theme;
+    }
+
+    .datepickerScroll {
+      li {
+        /*color: #222;*/
+      }
+
+      li.disabled {
+        color: var(--default-disabled-color);
+      }
+    }
+  }
+
+}

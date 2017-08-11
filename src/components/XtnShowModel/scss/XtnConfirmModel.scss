@@ -1,0 +1,118 @@
+.content {
+  width: 100%;
+  position: fixed;
+
+  .background {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+  }
+
+  .touchAction {
+    touch-action: none;
+    // width: 100%;
+  }
+
+  .leilong {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+
+    .subLeiLong {
+      // padding: 5px 10px;
+      background: #f1f2f3;
+      border-radius: 4px;
+      transform: scale(0.0);
+      transition: all ease-out 200ms;
+      position: relative;
+      max-width: 90%;
+
+      &.isMaxWidth {
+        width: calc(90%);
+      }
+
+      &.FillShow {
+        width: calc(98%);
+        height: 100%;
+      }
+
+      .closeIcon {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        padding: 10px;
+      }
+
+      .title {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        color: #222222;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .splitLine {
+        width: 100%;
+        height: 1px;
+        background: #dcdcdc;
+      }
+
+      .template {
+        width: 100%;
+        padding: 10px 5px;
+        text-align: center;
+        border-color: #d1d3d6;
+        font-size: 16px;
+        line-height: 1.5;
+        max-height: 330px;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .buttonInfo {
+        padding: 10px;
+        // margin: 20px 10px 5px;
+        display: flex;
+
+        &.none {
+          display: none;
+        }
+
+        div {
+          flex: 1;
+          text-align: center;
+          padding: 8px 30px;
+          border-radius: 5px;
+          background: #f4f5f6;
+          color: #222222;
+          margin: auto 10px;
+          font-size: 16px;
+        }
+
+        // .okButton {
+        //   background: red;
+        // }
+
+        // .cancelButton {
+        //   //background: #969696;
+        // }
+      }
+    }
+
+    .showAction {
+      transform: scale(1);
+      transition: all ease-out 200ms;
+    }
+  }
+}
