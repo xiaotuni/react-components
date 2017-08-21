@@ -8,7 +8,7 @@ export XtnLoadingModel from './XtnShowModel/XtnLoadingModel';
 export XtnConfirmModel from './XtnShowModel/XtnConfirmModel';
 export XtnPreviewModel from './XtnShowModel/XtnPreviewModel';
 export XtnActionSheet from './XtnShowModel/XtnActionSheetModel';
-export XtnRefresh from './XtnRefresh/XtnRefresh';
+export XtnScroll from './XtnScroll/XtnScroll';
 export XtnDatePicker from './XtnDatePicker/DatePicker';                     // 日期选择组件
 export XtnCarouselContent from './XtnCarousel/XtnCarousel';
 export XtnSlidePage from './XtnSlidePage/XtnSlidePage';

@@ -2,7 +2,7 @@
  * Created by admin on 2016-08-24.
  */
 import React, { Component, PropTypes } from 'react';
-import { Utility, XtnRefresh, XtnCarousel } from 'components';
+import { Utility, XtnScroll, XtnCarousel } from 'components';
 const styles = require('./scss/XtnPreviewModel.scss');
 /**
  * 预览
@@ -88,14 +88,14 @@ export default class XtnPreviewModel extends Component {
             <div onClick={() => Utility.$previewModelHide()}>X</div>
           </div>
           <div className={styles.pMode}>
-            <XtnRefresh RefreshComplete NextDataComplete onSlideLeft={this.__HandlerSlide.bind(this, true)}
+            <XtnScroll RefreshComplete NextDataComplete onSlideLeft={this.__HandlerSlide.bind(this, true)}
               onSlideRight={this.__HandlerSlide.bind(this, false)}>
               <XtnCarousel ref="divCarousel" IsShowNumber PageIndex={cIndex || Index || 0} onNextPage={(index) => {
                 this.state.cIndex = index;
               }}>
                 {this.__BuildList()}
               </XtnCarousel>
-            </XtnRefresh>
+            </XtnScroll>
           </div>
         </div>
       </div>

@@ -2,9 +2,11 @@
  * Created by admin on 2016-09-21.
  */
 import React, { Component, PropTypes } from 'react';
-import { Utility, XtnDefHref } from 'components';
+import { Utility, XtnDefHref, XtnScroll } from 'components';
 import { connect } from 'react-redux';
 import * as CommonActions from 'redux/modules/reduxCommon';
+
+const styles = require('./scss/Default.scss');
 
 @connect(
   state => ({
@@ -79,9 +81,58 @@ export default class Default extends Component {
     ]);
   }
 
+  __UpdateRender() {
+    this.setState({ __CURRENT_DATE_: new Date() });
+  }
+
+  __BuildScroll() {
+    const { ScrollList } = this.state;
+    if (!Utility.$isArray(ScrollList)) {
+      return null;
+    }
+    return ScrollList.map((row, index) => {
+      return (<div className={styles.scrollRow} key={index}>
+        {row}
+      </div>);
+    });
+  }
+
+  __InitDataByScroll(pageIndex) {
+    const _pageSize = 10;
+    let { ScrollList } = this.state;
+    if (pageIndex === 0) {
+      ScrollList = [];
+      this.state.ScrollList = ScrollList;
+    }
+    for (let i = pageIndex * _pageSize; i < (pageIndex + 1) * _pageSize; i++) {
+      ScrollList.push(i + 1);
+    }
+  }
+  __HandlerScrollRefresh() {
+    this.state.ScrollIndex = 0;
+    this.state.RefreshComplete = false;
+    this.__UpdateRender();
+    setTimeout(() => {
+      this.__InitDataByScroll(this.state.ScrollIndex);
+      this.state.RefreshComplete = true;
+      this.__UpdateRender();
+    }, 2000);
+  }
+
+  __HandlerScrollNextData() {
+    this.state.ScrollIndex++;
+
+    this.state.NextDataComplete = false;
+    this.__UpdateRender();
+    setTimeout(() => {
+      this.__InitDataByScroll(this.state.ScrollIndex);
+      this.state.NextDataComplete = true;
+      this.__UpdateRender();
+    }, 2000);
+  }
+
   render() {
-    const styles = require('./scss/Default.scss');
-    const { times } = this.state;
+    const { times, IsShowScroll, RefreshComplete, NextDataComplete } = this.state;
     return (
       <div className={styles.defaultCss}>
         <XtnDefHref />
@@ -95,12 +146,28 @@ export default class Default extends Component {
             <div className={styles.item} onClick={this.__OnActionSheet.bind(this)}>Action Sheet</div>
             <div className={styles.item} onClick={this.__OnActionSheetBtns.bind(this)}>Action Sheet Buttons</div>
             <div className={styles.item} onClick={this.__OnConfirm.bind(this)}>Confirm</div>
-            <div>
+            <div className={styles.item} onClick={() => {
+              this.state.IsShowScroll = !this.state.IsShowScroll;
+              if (!!this.state.IsShowScroll) {
+                this.__HandlerScrollRefresh();
+              }
+            }}>XtnScroll</div>
+            {
+              !!IsShowScroll && <div className={styles.xtnScroll}> <XtnScroll RefreshComplete={RefreshComplete}
+                NextDataComplete={NextDataComplete}
+                onRefresh={this.__HandlerScrollRefresh.bind(this)}
+                onNextData={this.__HandlerScrollNextData.bind(this)}
+              >
+                {
+                  this.__BuildScroll()
+                }
+              </XtnScroll></div>
+            }
 
-            </div>
-            <div></div>
           </div>
+
         </div>
+
       </div>
     );
   }

@@ -3,15 +3,18 @@
  */
 import React, { Component, PropTypes } from 'react';
 import { Utility } from 'components';
-const styles = require('./scss/XtnRefresh.scss');
+const styles = require('./scss/XtnScroll.scss');
 /**
- * <XtnRefresh
- *  LoadType={0 or 1} 0-->默认刷新。1有数据的显示刷新
- *  onClick = {this.handlerOnClick.bind(this)}/>
+ * <XtnScroll 
+ *   RefreshComplete={RefreshComplete} 
+ *   NextDataComplete={NextDataComplete}
+ *   onRefresh={()=>{....}}
+ *   onNextData={()=>{....}}
+ * />
  */
-export default class XtnRefresh extends Component {
+export default class XtnScroll extends Component {
   static propTypes = {
-    children: PropTypes.object.isRequired,                               // 子项
+    children: PropTypes.any,                                             // 子项
     Percentage: PropTypes.number,                                        // 百分比
     LoadType: PropTypes.number,                                          // loading type
     RefreshComplete: PropTypes.bool,                                     // 刷新完成
@@ -65,9 +68,9 @@ export default class XtnRefresh extends Component {
    * @memberOf Refresh
    */
   __HandlerRefresh() {
-    const xtnRefresh = this.refs.xtnRefresh;
+    const divXtnScroll = this.refs.divXtnScroll;
     const body = document.body;
-    const __differenceValue = body.scrollHeight - xtnRefresh.scrollHeight;
+    const __differenceValue = body.scrollHeight - divXtnScroll.scrollHeight;
     const __bodyScrollTop = body.scrollTop;
     if (__bodyScrollTop > __differenceValue) {
       return;
@@ -89,7 +92,6 @@ export default class XtnRefresh extends Component {
   __HandlerNextData() {
     const { onNextData, NextDataComplete } = this.props;
     if (!Utility.isFunction(onNextData) || NextDataComplete === false) {
-      // Utility.$actionSheet('NextDataComplete:' + NextDataComplete);
       return;
     }
     const Percentage = this.props.Percentage || 1;
@@ -97,7 +99,6 @@ export default class XtnRefresh extends Component {
     const __bodyScrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
     const __differValue = ((__bodyScrollHeight - __bodyScrollTop - screen.height) / __bodyScrollHeight) * 100;
     if (__differValue > (Percentage < 2 ? 2 : Percentage)) {
-      // Utility.$actionSheet('__differValue：' + __differValue + ';Percentage: ' + Percentage);
       return;
     }
     // Utility.$actionSheet('开始调用下一页数据');
@@ -149,7 +150,6 @@ export default class XtnRefresh extends Component {
   __ProcessSlide(event) {
     const { clientX } = event.changedTouches[0];
     const { startX } = this.state;
-    // console.log('startX - currentX = %d - %d = ', startX, clientX, startX - clientX);
     const { onSlideRange } = this.props;
     if (onSlideRange) {
       onSlideRange(clientX - startX);
@@ -235,7 +235,6 @@ export default class XtnRefresh extends Component {
     const absYes = Math.abs(yes);
 
     if (absXes < 10 && absYes < 10) {
-      // Utility.$actionSheet('absXes: ' + absXes + '; absYes: ' + absYes);
       return;
     }
     this.__ProcessAniEnd();
@@ -247,7 +246,6 @@ export default class XtnRefresh extends Component {
         if (absXes > absYes) {
           // 向右。
           this.__HandlerSlideRight();
-          // console.log('向右');
         } else {
           // 向下。
           this.__HandlerRefresh();
@@ -257,7 +255,6 @@ export default class XtnRefresh extends Component {
         if (absXes > absYes) {
           // 向右。
           this.__HandlerSlideRight();
-          // console.log('向右');
         } else {
           // 向上。
           this.__HandlerNextData();
@@ -269,7 +266,6 @@ export default class XtnRefresh extends Component {
         // 向下
         if (absXes > absYes) {
           // 向左。
-          // console.log('向左');
           this.__HandlerSlideLeft();
         } else {
           // 向下。
@@ -278,10 +274,8 @@ export default class XtnRefresh extends Component {
       } else {
         // 向上
         if (absXes > absYes) {
-          // console.log('向左');
           this.__HandlerSlideLeft();
         } else {
-          // console.log('向左-->向上');
           this.__HandlerNextData();
         }
       }
@@ -308,7 +302,6 @@ export default class XtnRefresh extends Component {
     const { MarginBottom, MarginTop } = this.props;
     const __styles = {};
     if (MarginBottom && MarginBottom > 0) {
-      // __styles.marginBottom = MarginBottom + 'px';
       __styles.borderBottom = MarginBottom + 'px' + 'solid #f4f5f6';
     }
     if (MarginTop && MarginTop > 0) {
@@ -320,7 +313,7 @@ export default class XtnRefresh extends Component {
   render() {
     const { LoadType, RefreshComplete, NextDataComplete } = this.props;
     return (
-      <div ref="xtnRefresh" className={styles.refreshCss} style={this.__GetStyle()}
+      <div ref="divXtnScroll" className={styles.refreshCss} style={this.__GetStyle()}
         onScroll={this.__HandlerNextData.bind(this)} onTouchStart={this.__HandlerStart.bind(this)}
         onTouchEnd={this.__HandlerEnd.bind(this)} onTouchMove={this.__HandlerMove.bind(this)}
         onWheel={this.__HandlerWheel.bind(this)} >

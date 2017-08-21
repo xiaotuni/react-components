@@ -32,6 +32,19 @@
           color: #fff;
         }
       }
+
+      .xtnScroll {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 20px;
+
+        .scrollRow {
+          margin-bottom: 10px;
+          border: 1px solid #e0e0e0;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
     }
   }
 
