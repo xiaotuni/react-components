@@ -75,8 +75,8 @@ reactTransform[1].transforms.push({
 });
 
 const autoprefixer = require('autoprefixer');
-
 const Visualizer = require('webpack-visualizer-plugin');
+
 module.exports = {
   devtool: 'inline-source-map',
   context: path.resolve(__dirname, '..'),
@@ -127,12 +127,22 @@ module.exports = {
       __DEVTOOLS__: false  // <-------- DISABLE redux-devtools HERE
     }),
     webpackIsomorphicToolsPlugin.development(),
-    // new Visualizer({ filename: './statistics.html' }),
+    new Visualizer({ filename: './statistics.html' }),
+    // webpack dllplugin
+    new webpack.DllReferencePlugin({
+      context: __dirname, manifest: require(path.join(__dirname, 'debug/manifest.json')),
+    }),
+    // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
+      name: 'vendor',
       minChunks: (module, count) => {
+        // any required modules inside node_modules are extracted to vendor
         return (module.resource && /\.js$/.test(module.resource) && module.resource.indexOf(path.join(__dirname, '../node_modules')) === 0);
       }
     }),
+    // extract webpack runtime and module manifest to its own file in order to
+    // prevent vendor hash from being updated whenever app bundle is updated
+    new webpack.optimize.CommonsChunkPlugin({ name: 'manifest', chunks: ['vendor'] }),
+
   ]
 };

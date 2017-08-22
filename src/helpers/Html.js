@@ -34,7 +34,7 @@ export default class Html extends Component {
           {head.link.toComponent()}
           {head.script.toComponent()}
 
-          <link rel="shortcut icon" href="/favicon.ico" />
+          {/* <link rel="shortcut icon" href="/favicon.ico" /> */}
           {/* styles (will be present only in production with webpack extract text plugin) */}
           {Object.keys(assets.styles).map((style, key) =>
             <link href={assets.styles[style]} key={key} media="screen, projection"
@@ -50,7 +50,9 @@ export default class Html extends Component {
         <body style={{ background: '#f4f5f6' }}>
           <div id="content" dangerouslySetInnerHTML={{ __html: content }} />
           <script dangerouslySetInnerHTML={{ __html: `window.__data=${serialize(store.getState())};` }} charSet="UTF-8" />
-           <script src={assets.javascript.vendors} charSet="UTF-8" />
+          <script src="http://127.0.0.1:18080/lib.js" charSet="UTF-8" />
+          <script src={assets.javascript.manifest} charSet="UTF-8" />
+          <script src={assets.javascript.vendor} charSet="UTF-8" />
           <script src={assets.javascript.main} charSet="UTF-8" />
         </body>
       </html>

@@ -10,8 +10,8 @@ npm-debug.log
 .vscode/
 .happypack/
 webpack/build
+webpack/debug
 webpack/manifest.json
-webpack/dll.config.js
 webpack/webpack.dll.config.js
 plus.config.js
 gulpfile.js

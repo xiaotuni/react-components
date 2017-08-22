@@ -46,7 +46,7 @@ module.exports = Object.assign({
         { property: 'og:image:height', content: '200' }
       ],
       script: [
-        // { type: 'text/javascript', src: '' }
+        { type: 'text/javascript', src: 'http://127.0.0.1:18080/lib.js' }
       ]
     },
     Environment: environment.isProduction,

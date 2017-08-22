@@ -26,7 +26,6 @@ const server = new http.Server(app);
 const proxy = httpProxy.createProxyServer({ target: targetUrl, ws: true });
 
 app.use(compression());
-app.use(favicon(path.join(__dirname, '..', 'static', 'favicon.ico')));
 app.use(Express.static(path.join(__dirname, '..', 'static')));
 
 app.use('/ws', (req, res) => {
