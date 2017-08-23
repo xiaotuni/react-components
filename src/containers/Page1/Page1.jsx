@@ -32,8 +32,8 @@ export default class Page1 extends Component {
   render() {
     return (
       <div className={styles.defaultCss}>
-        page1 component
         <XtnDefHref />
+        page1 component
       </div>
     );
   }

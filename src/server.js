@@ -1,23 +1,38 @@
+import http from 'http';
+const os = require('os');
+import path from 'path';
+
 import Express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
-import config from './config';
 // import favicon from 'serve-favicon';
 import compression from 'compression';
 import httpProxy from 'http-proxy';
-import path from 'path';
 import createStore from './redux/create';
 import ApiClient from './helpers/ApiClient';
 import Html from './helpers/Html';
 import PrettyError from 'pretty-error';
-import http from 'http';
-
 import { match } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { ReduxAsyncConnect, loadOnServer } from 'redux-async-connect';
 import createHistory from 'react-router/lib/createMemoryHistory';
 import { Provider } from 'react-redux';
 import getRoutes from './routes';
+import config from './config';
+
+const interfaces = os.networkInterfaces();
+let address = (process.env.HOST || config.host);
+if (interfaces && interfaces.无线网络连接 && interfaces.无线网络连接.length > 0) {
+  for (let i = 0; i < interfaces.无线网络连接.length; i++) {
+    const row = interfaces.无线网络连接[i];
+    if (row && row.family === 'IPv4') {
+      address = row.address;
+      break;
+    }
+  }
+}
+config.host = address;
+
 
 const targetUrl = 'http://' + config.apiHost + ':' + config.apiPort;
 const pretty = new PrettyError();

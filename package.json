@@ -40,10 +40,24 @@
     "test": "karma start",
     "test-node": "./node_modules/mocha/bin/mocha $(find api -name '*-test.js') --compilers js:babel-core/register",
     "test-node-watch": "./node_modules/mocha/bin/mocha $(find api -name '*-test.js') --compilers js:babel-core/register --watch",
-    "dll": "webpack --config webpack/dll.config.js --progress",
-    "dll-debug": "webpack --config webpack/dll.config.js --progress"
+    "dll": "\"npm run build-dll\"",
+    "build-dll": "better-npm-run build-dll",
+    "dll-debug": "\"npm run build-dll:debug\"",
+    "build-dll:debug": "better-npm-run build-dll-debug"
   },
   "betterScripts": {
+    "build-dll": {
+      "command": "webpack --config webpack/dll.config.js --progress",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build-dll-debug": {
+      "command": "webpack --config webpack/dll.config.js --progress",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
     "start-prod": {
       "command": "node ./bin/server.js",
       "env": {
@@ -190,6 +204,7 @@
     "react-swipe": "^5.0.6",
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
+    "react-transition-group": "^1.2.0",
     "redbox-react": "^1.1.1",
     "redux-devtools": "^3.0.0-beta-3",
     "redux-devtools-dock-monitor": "^1.0.0-beta-3",

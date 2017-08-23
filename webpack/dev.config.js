@@ -77,6 +77,11 @@ reactTransform[1].transforms.push({
 const autoprefixer = require('autoprefixer');
 const Visualizer = require('webpack-visualizer-plugin');
 
+console.log('------dev.config.js---------');
+console.log(path.join(__dirname, 'debug/manifest.json'));
+console.log('------dev.config.js---------');
+
+
 module.exports = {
   devtool: 'inline-source-map',
   context: path.resolve(__dirname, '..'),

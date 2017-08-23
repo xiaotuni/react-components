@@ -36,20 +36,20 @@ const lib = [
 ];
 const isDebug = process.env.NODE_ENV === 'development';
 
-const outputPath = './webpack/debug';// isDebug ? path.join(__dirname, '../common/debug') : path.join(__dirname, '../common/js');
+const outputPath = isDebug ? path.join(__dirname, '/debug') : path.join(__dirname, '/build');
+console.log('-----------------------');
+console.log(outputPath);
+console.log('-----------------------');
+
 
 const plugin = [
   new webpack.DllPlugin({
     /**
-     * path
-     * 定义 manifest 文件生成的位置
-     * [name]的部分由entry的名字替换
+     * path  定义 manifest 文件生成的位置 [name]的部分由entry的名字替换
      */
     path: path.join(outputPath, 'manifest.json'),
     /**
-     * name
-     * dll bundle 输出到那个全局变量上
-     * 和 output.library 一样即可。
+     * name  dll bundle 输出到那个全局变量上  和 output.library 一样即可。
      */
     name: '[name]',
     context: __dirname
