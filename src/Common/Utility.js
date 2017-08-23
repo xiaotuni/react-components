@@ -84,10 +84,14 @@ export default class Utility {
     UrlItem: {
       GoBack: 'goBack',                                                    // 回退操作
       Default: 'default',                                                  // 默认页面
+      Page1: 'Page1',                                                      // 默认页面
+      Page2: 'Page2',                                                      // 默认页面
     },
     UrlTitle: {
       '/': { Title: '首页', Index: 0 },
       '/default': { Title: '默认页面', Index: 1 },
+      '/page1': { Title: '页面1', Index: 0 },
+      '/page2': { Title: '页面2', Index: 0 },
     },
     /**
      * 显示模式

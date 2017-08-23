@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 import { Utility, XtnNavBar } from 'components';
 import config from '../../config';
-import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
+// import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
+import { CSSTransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import * as CommonActions from 'redux/modules/reduxCommon';
 const EventEmitter = require('events').EventEmitter;
@@ -136,7 +137,7 @@ export default class App extends Component {
   }
 
   __SetRouterComponentEnterAndLeve() {
-    const { children } = this.props; 
+    const { children } = this.props;
     const { props } = children || {};
     const { routes } = props || {};
     if (!Utility.$isArray(routes)) {
@@ -190,14 +191,14 @@ export default class App extends Component {
         <XtnNavBar Title={Title} IsWeiXin={IsWeiXin} />
 
         <div className={!!IsWeiXin ? styles.isWeiXin : styles.appContent} ref="divAppMain">
-          <ReactCSSTransitionGroup component="div"
+          <CSSTransitionGroup component="div"
             transitionName={!!IsStop ? 'demo' : this.getTransitionsName(!!IsReturn, styles)}
             transitionAppear
             transitionAppearTimeout={__timeout}
             transitionEnterTimeout={__timeout}
             transitionLeaveTimeout={__timeout}>
             {React.cloneElement(this.props.children, { key: this.props.location.pathname })}
-          </ReactCSSTransitionGroup>
+          </CSSTransitionGroup>
         </div>
       </div>
     );

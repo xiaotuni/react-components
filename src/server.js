@@ -2,7 +2,7 @@ import Express from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import config from './config';
-import favicon from 'serve-favicon';
+// import favicon from 'serve-favicon';
 import compression from 'compression';
 import httpProxy from 'http-proxy';
 import path from 'path';
@@ -27,6 +27,7 @@ const proxy = httpProxy.createProxyServer({ target: targetUrl, ws: true });
 
 app.use(compression());
 app.use(Express.static(path.join(__dirname, '..', 'static')));
+app.use(Express.static(path.join(__dirname, '..', 'webpack', 'debug')));
 
 app.use('/ws', (req, res) => {
   proxy.web(req, res, { target: targetUrl + '/ws' });

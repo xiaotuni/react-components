@@ -561,8 +561,10 @@ export default class NavBar extends Component {
     return (
       <div className={styles.navBarCss + ' ' + (!!IsWeiXin ? styles.isWeiXin : '')}>
         <div className={styles.subContent + ' ' + (!!IsWeiXin ? styles.isWeiXin1 : '')}>
-          <div className={styles.left}>
-            {this.__BuildRightTypeHtml(false)}
+          <div className={styles.left} onClick={this.__HandlerGoBack.bind(this)}>
+            <div className={styles.defaultIcon}>
+              <div></div>
+            </div>
           </div>
           <div className={styles.center}>
             <div className={styles.other} onClick={this.__HandlerTitleOther.bind(this)} ></div>

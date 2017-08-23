@@ -30,6 +30,10 @@ module.exports = Object.assign({
   app: {
     title: '',
     description: '轻应用，手机应用程序.',
+    Environment: environment.isProduction,
+    IsHideNavBar: false, // environment.isProduction,
+    BuildPublicPath: '/xtn/',
+    BaseName: '/xtn/',
     head: {
       titleTemplate: '%s',
       meta: [
@@ -46,12 +50,8 @@ module.exports = Object.assign({
         { property: 'og:image:height', content: '200' }
       ],
       script: [
-        { type: 'text/javascript', src: 'http://127.0.0.1:18080/lib.js' }
+        // { type: 'text/javascript', src: '/lib.js' }
       ]
     },
-    Environment: environment.isProduction,
-    IsHideNavBar: false, // environment.isProduction,
-    BuildPublicPath: '/xtn/',
-    BaseName: '/xtn/',
   },
 }, environment);
