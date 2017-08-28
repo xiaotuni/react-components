@@ -48,4 +48,14 @@
     }
   }
 
+  .footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 0px;
+    >input[type='text'] {
+      padding: 5px 10px;
+      width: 100%;
+    }
+  }
 }

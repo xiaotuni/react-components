@@ -131,6 +131,14 @@ export default class Default extends Component {
     }, 2000);
   }
 
+  __txtFocus() {
+    const { divFooter } = this.refs;
+    if (!divFooter) {
+      return;
+    }
+    divFooter.scrollIntoView();
+  }
+
   render() {
     const { times, IsShowScroll, RefreshComplete, NextDataComplete } = this.state;
     return (
@@ -168,6 +176,9 @@ export default class Default extends Component {
 
         </div>
 
+        <div ref="divFooter" className={styles.footer}>
+          <input type="text" onFocus={this.__txtFocus.bind(this)} />
+        </div>
       </div>
     );
   }
