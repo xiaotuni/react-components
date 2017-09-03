@@ -5,17 +5,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import { Utility, XtnDefHref, XtnScroll } from 'components';
 import { Utility } from 'components';
-import { connect } from 'react-redux';
-import * as CommonActions from 'redux/modules/reduxCommon';
+// import { connect } from 'react-redux';
+// import * as CommonActions from 'redux/modules/reduxCommon';
 
 const styles = require('./scss/Default.scss');
 
-@connect(
-  state => ({
-    Title: state.Common.Title,                                          // 标题
-    UrlParams: state.Common.UrlParams,                                  // URL参数
-  }),
-  { ...CommonActions })
+// @connect(
+//   state => ({
+//     Title: state.Common.Title,                                          // 标题
+//     UrlParams: state.Common.UrlParams,                                  // URL参数
+//   }),
+//   { ...CommonActions })
 export default class Default extends Component {
   static propTypes = {
     Title: PropTypes.string,                                              // 标题
@@ -143,7 +143,8 @@ export default class Default extends Component {
 
         // <XtnDefHref />
   render() {
-    const { times, IsShowScroll, RefreshComplete, NextDataComplete } = this.state;
+    // const { times, IsShowScroll, RefreshComplete, NextDataComplete } = this.state;
+    const { times } = this.state;
     return (
       <div className={styles.defaultCss}>
         <div className={styles.components}>

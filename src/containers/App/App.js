@@ -5,19 +5,19 @@ import { Utility, XtnNavBar } from 'components';
 import config from '../../config';
 // import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import { CSSTransitionGroup } from 'react-transition-group';
-import { connect } from 'react-redux';
-import * as CommonActions from 'redux/modules/reduxCommon';
+// import { connect } from 'react-redux';
+// import * as CommonActions from 'redux/modules/reduxCommon';
 const EventEmitter = require('events').EventEmitter;
 const event = new EventEmitter();
 
-@connect(
-  state => ({
-    Title: state.Common.Title,                                          // 标题
-    UrlParams: state.Common.UrlParams,                                  // URL参数
-    TabsFooterInfo: state.Common.TabsFooterInfo,                        // tabsTooter信息
-    PageSliderInfo: state.Common.PageSliderInfo,                        // 页面滑动
-  }),
-  { ...CommonActions })
+// @connect(
+//   state => ({
+//     Title: state.Common.Title,                                          // 标题
+//     UrlParams: state.Common.UrlParams,                                  // URL参数
+//     TabsFooterInfo: state.Common.TabsFooterInfo,                        // tabsTooter信息
+//     PageSliderInfo: state.Common.PageSliderInfo,                        // 页面滑动
+//   }),
+//   { ...CommonActions })
 export default class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired,                                // 子项
