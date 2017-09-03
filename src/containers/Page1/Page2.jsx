@@ -1,7 +1,8 @@
 /**
  * Created by admin on 2016-09-21.
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { XtnDefHref } from 'components';
 import * as CommonActions from 'redux/modules/reduxCommon';

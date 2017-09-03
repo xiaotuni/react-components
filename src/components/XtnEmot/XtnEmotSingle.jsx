@@ -1,7 +1,8 @@
 /**
  * 图标 <XtnEmotSingle EmotType="emot_0"/> 
  */
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { } from 'components';
 const styles = require('./scss/XtnEmoticon.scss');
 

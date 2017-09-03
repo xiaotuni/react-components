@@ -1,10 +1,8 @@
 /**
  * Created by admin on 2016-10-12.
  */
-/**
- * @module Date组件
- */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as TimeUtil from './time.js';
 import { shallowEqual } from './pureRender.js';
 
@@ -79,16 +77,16 @@ export default class DatePickerItem extends Component {
   }
 
   _iniDates(date) {
-    const {typeName} = this.props;
+    const { typeName } = this.props;
     const dates = Array(...Array(DATE_LENGTH))
       .map((value, index) =>
         TimeUtil[`next${typeName}`](date, index - MIDDLE_INDEX));
-    this.setState({dates});
+    this.setState({ dates });
   }
 
   _updateDates(direction) {
-    const {typeName} = this.props;
-    const {dates} = this.state;
+    const { typeName } = this.props;
+    const { dates } = this.state;
     if (direction === 1) {
       this.currentIndex++;
       this.setState({
@@ -112,8 +110,8 @@ export default class DatePickerItem extends Component {
 
   _checkIsUpdateDates(direction, translateY) {
     return direction === 1 ?
-    this.currentIndex * DATE_HEIGHT + DATE_HEIGHT / 2 < -translateY :
-    this.currentIndex * DATE_HEIGHT - DATE_HEIGHT / 2 > -translateY;
+      this.currentIndex * DATE_HEIGHT + DATE_HEIGHT / 2 < -translateY :
+      this.currentIndex * DATE_HEIGHT - DATE_HEIGHT / 2 > -translateY;
   }
 
   /**
@@ -132,7 +130,7 @@ export default class DatePickerItem extends Component {
    */
   _moveToNext(direction) {
     const date = this.state.dates[MIDDLE_INDEX];
-    const {max, min} = this.props;
+    const { max, min } = this.props;
     if (direction === -1 && date.getTime() < min.getTime()) {
       this._updateDates(1);
     } else if (direction === 1 && date.getTime() > max.getTime()) {
@@ -175,7 +173,7 @@ export default class DatePickerItem extends Component {
 
     // 日期最小值，最大值限制
     const date = this.state.dates[MIDDLE_INDEX];
-    const {max, min} = this.props;
+    const { max, min } = this.props;
     if (date.getTime() < min.getTime() ||
       date.getTime() > max.getTime()) {
       return;
@@ -186,7 +184,7 @@ export default class DatePickerItem extends Component {
       this._updateDates(direction);
     }
 
-    this.setState({translateY});
+    this.setState({ translateY });
   }
 
   handleEnd(event) {

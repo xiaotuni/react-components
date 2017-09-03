@@ -13,6 +13,7 @@ const lib = [
   'immutable',
   'lodash',
   'object-assign',
+  'prop-types',
   'querystring',
   'react',
   'react-dom',

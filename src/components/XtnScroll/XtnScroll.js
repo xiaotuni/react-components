@@ -1,7 +1,8 @@
 /**
  * Created by admin on 2016-10-23.
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Utility } from 'components';
 const styles = require('./scss/XtnScroll.scss');
 /**

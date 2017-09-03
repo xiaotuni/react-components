@@ -1,7 +1,8 @@
 /**
  * Created by admin on 2016-07-06.
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Utility, XtnActionSheet, XtnConfirmModel, XtnPreviewModel, XtnLoadingModel, XtnDatePicker } from 'components';
 import { connect } from 'react-redux';
 import * as CommonActions from 'redux/modules/reduxCommon';

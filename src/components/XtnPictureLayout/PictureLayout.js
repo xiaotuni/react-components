@@ -1,7 +1,8 @@
 /**
  * 九宫格组件 引入react-bootstrap
  */
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Utility } from 'components';
 const styles = require('./scss/PictureLayout.scss');
 

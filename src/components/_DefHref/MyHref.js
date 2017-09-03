@@ -1,12 +1,10 @@
 /**
  * Created by admin on 2016-09-22.
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Utility } from 'components';
 
-/**
- *
- */
 export default class XtnDefHref extends Component {
   static propTypes = {
     IsShowBackArrow: PropTypes.bool,                                 // 是否显示返回按键

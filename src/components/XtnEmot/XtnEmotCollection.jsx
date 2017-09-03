@@ -1,7 +1,8 @@
 /**
  * 图标 <XtnEmoticon IconType="iconDefault" IsSelect onClick = {this.__HandlerClick.bind(this)} /> 
  */
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Utility } from 'components';
 const styles = require('./scss/XtnEmoticon.scss');
 

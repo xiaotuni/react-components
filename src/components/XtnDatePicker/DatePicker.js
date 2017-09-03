@@ -9,7 +9,8 @@
  *     onCancel={this.__HandlerCancel.bind(this)}
  *     />
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { convertDate } from './time.js';
 import DatePickerItem from './DatePickerItem.js';
 import Utility from '../../Common/Utility';

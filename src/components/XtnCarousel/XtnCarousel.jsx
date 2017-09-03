@@ -1,7 +1,8 @@
 /**
  * Created by admin on 2016-06-13.
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { } from 'components';
 
 export default class CarouselContent extends Component {
